@@ -1,0 +1,8 @@
+make all --dry-run --keep-going --print-directory
+make: Entering directory '/home/magnus/Desktop/3313-lab2/SE-3316-lab2-part1'
+g++ -c Writer.cpp -std=c++11
+g++ -o Writer Writer.o thread.o Blockable.o -pthread -l rt
+g++ -c Reader.cpp -std=c++11 
+g++ -o Reader Reader.o -pthread -l rt
+make: Leaving directory '/home/magnus/Desktop/3313-lab2/SE-3316-lab2-part1'
+ 
