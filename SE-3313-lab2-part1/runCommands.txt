@@ -1,0 +1,3 @@
+"/home/magnus/Documents/GitHub/SE-3313-Lab2/SE-3313-lab2-part1/Writer" 
+"/home/magnus/Documents/GitHub/SE-3313-Lab2/SE-3313-lab2-part1/Reader"
+

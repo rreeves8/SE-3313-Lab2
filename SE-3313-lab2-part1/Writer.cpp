@@ -68,6 +68,7 @@ int main(void){
 				currentThread->flag = true;
 				delete currentThread;
 			}
+			break;
 		}	
 	}
 	//example for one thread thread1

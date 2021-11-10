@@ -2,18 +2,13 @@
     "makefile.extensionOutputFolder": "./.vscode",
     "makefile.launchConfigurations": [
         {
-            "cwd": "/home/magnus/Desktop/SE-3316-lab2-part1",
-            "binaryPath": "/home/magnus/Desktop/SE-3316-lab2-part1/Writer",
+            "cwd": "/home/magnus/Documents/GitHub/SE-3313-Lab2/SE-3313-lab2-part1",
+            "binaryPath": "/home/magnus/Documents/GitHub/SE-3313-Lab2/SE-3313-lab2-part1/Writer",
             "binaryArgs": []
         },
         {
-            "cwd": "/home/magnus/Desktop/SE-3316-lab2-part1",
-            "binaryPath": "/home/magnus/Desktop/SE-3316-lab2-part1/Reader",
-            "binaryArgs": []
-        },
-        {
-            "cwd": "/home/magnus/Desktop/3313-lab2/SE-3316-lab2-part1",
-            "binaryPath": "/home/magnus/Desktop/3313-lab2/SE-3316-lab2-part1/Reader",
+            "cwd": "/home/magnus/Documents/GitHub/SE-3313-Lab2/SE-3313-lab2-part1",
+            "binaryPath": "/home/magnus/Documents/GitHub/SE-3313-Lab2/SE-3313-lab2-part1/Reader",
             "binaryArgs": []
         }
     ]
