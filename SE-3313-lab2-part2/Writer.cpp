@@ -2,8 +2,15 @@
 #include <sstream>
 #include "thread.h"
 #include "SharedObject.h"
+#include "Semaphore.h"
 
 using namespace std;
+
+//the semaphore for stopping changes to the SharedMemoryObject
+Semaphore writeSemaphore("writeSemaphore", 1, true);
+	
+//the semaphore for notifying of changes
+Semaphore notifySemaphore("notifySemaphore", 1, true);	
 
 struct SharedMemoryObject{
 	int threadID;
@@ -29,10 +36,16 @@ class WriterThread : public Thread{
 			Shared<SharedMemoryObject> sharedMemory ("sharedMemory");
 			
 			while(true){ // store values in shared, then sleep, if flag detected kill loop
+				writeSemaphore.wait(); //pause all writing 
+				
 				sharedMemory->threadID = this->threadNum;
 				sharedMemory->reportID = threadReported++;
 				sharedMemory->elapsedTime = delay;
-
+				
+				//signal the sempaphores that writing can continue again for other threads
+				writeSemaphore.Signal(); 
+				notifySemaphore.Signal();
+				
 				sleep(delay);
 				
 				if(flag){ //Exit loop to end the thread
@@ -43,10 +56,14 @@ class WriterThread : public Thread{
 };
 
 int main(void){
-	cout << "I am a Writer" << std::endl;
 
+	
+	cout << "I am a Writer" << std::endl;	
+	
 	int threadCount = 0; //thread counter
+	
 	Shared<SharedMemoryObject> shared("sharedMemory", true); //This is the owner of sharedMamory
+	
 	vector<WriterThread*> threads; //store a reference to each thread
 
 	while(true){
