@@ -1,0 +1,2 @@
+"/home/magnus/Documents/GitHub/SE-3313-Lab2/SE-3313-lab2-part2/Writer" 
+"/home/magnus/Documents/GitHub/SE-3313-Lab2/SE-3313-lab2-part2/Reader" 

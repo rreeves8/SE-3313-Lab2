@@ -36,7 +36,7 @@ class WriterThread : public Thread{
 			Shared<SharedMemoryObject> sharedMemory ("sharedMemory");
 			
 			while(true){ // store values in shared, then sleep, if flag detected kill loop
-				writeSemaphore.wait(); //pause all writing 
+				writeSemaphore.Wait(); //pause all writing 
 				
 				sharedMemory->threadID = this->threadNum;
 				sharedMemory->reportID = threadReported++;

@@ -1,3 +1,10 @@
-make --dry-run --keep-going --print-directory
-/bin/sh: 1: make: not found
+make all --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/magnus/Documents/GitHub/SE-3313-Lab2/SE-3313-lab2-part2'
+g++ -c Writer.cpp -std=c++11
+g++ -c thread.cpp -std=c++11
+g++ -c Blockable.cpp -std=c++11
+g++ -o Writer Writer.o thread.o Blockable.o -pthread -l rt
+g++ -c Reader.cpp -std=c++11 
+g++ -o Reader Reader.o -pthread -l rt
+make: Leaving directory '/home/magnus/Documents/GitHub/SE-3313-Lab2/SE-3313-lab2-part2'
  
